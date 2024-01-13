@@ -21,5 +21,4 @@ This repository contains Terraform code to deploy a basic AWS network layer, inc
 
     ```bash
     git clone https://github.com/Naganathan05/AWS-Network-Layer-with-Terraform.git
-    cd aws-network-layer-terraform
     ```
