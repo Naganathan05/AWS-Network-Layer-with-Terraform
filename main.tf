@@ -12,3 +12,18 @@ module "sg" {
 }
 
 // Configuring the EC2 instance
+module "ec2" {
+  source = "./modules/ec2"
+  sg_id = module.sg.sg_id
+  subnets_id = module.vpc.subnet_ids
+  instanceNames = var.instanceNames
+}
+
+// Configuring Application Load Balancer
+module "alb" {
+  source = "./modules/alb"
+  sg_id = module.sg.sg_id
+  subnets = module.vpc.subnet_ids
+  vpc_id = module.vpc.vpc_id
+  ec2_id = module.ec2.instances
+}

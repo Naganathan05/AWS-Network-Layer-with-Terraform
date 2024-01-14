@@ -12,3 +12,8 @@ variable "subnet_cidr" {
   description = "CIDR block for the subnets"
   type = list(string)
 }
+
+variable "instanceNames" {
+  description = "Names for the EC2 instances"
+  type = list(string)
+}
